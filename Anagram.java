@@ -29,8 +29,8 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		String str1N = preProcess(str1).toLowerCase();
-		String str2S = preProcess(str2).toLowerCase();
+		String str1N = preProcess(str1);
+		String str2S = preProcess(str2);
 		if(str1N.length() != str2S.length()) { return false; }
 		char[]str2N = str2S.toCharArray();
 		for(int i = 0; i < str1N.length(); i++) {
@@ -59,7 +59,7 @@ public class Anagram {
 				newStr.append(str.charAt(i));
 			}
 		}
-		return newStr.toString();
+		return newStr.toString().toLowerCase();
 	} 
 	   
 	// Returns a random anagram of the given string. The random anagram consists of the same
